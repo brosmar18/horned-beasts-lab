@@ -2,7 +2,10 @@ import './App.css';
 import React from 'react';
 import Header from './header';
 import Footer from './footer';
-import Main from './main';
+import Main from './Main';
+
+
+
 class App extends React.Component {
 
 
