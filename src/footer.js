@@ -1,12 +1,14 @@
-import React from 'react';
+import React from "react";
 
-class Footer extends React.Component{
-    render(){
-        return(
+class Footer extends React.Component {
+    render() {
+        return (
             <>
-                <footer><p>&copy; Bryan Garduno Gonzalez</p></footer>
+                <footer className="footer">
+                    <p className="footer__copyright">&copy; Bryan Garduno Gonzalez</p>
+                </footer>
             </>
-        )
+        );
     }
 }
 
