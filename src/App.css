@@ -14,13 +14,6 @@ body {
   margin: 0;
 }
 
-.main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-}
-
 .footer {
   background-color: #333;
   padding: 1rem;
@@ -43,6 +36,12 @@ body {
   overflow: hidden;
 }
 
+.horned-beast__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .horned-beast__title {
   margin: 0;
   margin-bottom: 0.5rem;
@@ -52,16 +51,10 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  cursor: pointer;
   margin-bottom: 0.5rem;
 }
 
 .horned-beast__description {
-  margin: 0;
-  margin-bottom: 0.5rem;
-}
-
-.horned-beast__favorites {
   margin: 0;
 }
 
