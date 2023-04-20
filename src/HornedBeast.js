@@ -21,15 +21,20 @@ class HornedBeast extends React.Component {
             className="horned-beast__image"
             src={this.props.image_url}
             alt={this.props.title}
-            onClick={this.increaseFavorites}
           />
           <figcaption className="horned-beast__description">Description: {this.props.description}</figcaption>
           <p className="horned-beast__favorites">
+            Favorites: {this.state.favorites}
+          </p>
+          <p className="horned-beast__instruction">
+            Click the button below to favorite this beast!
+          </p>
+          <button className="horned-beast__favorite-btn" onClick={this.increaseFavorites}>
             <span role="img" aria-label="heart">
               ❤️
             </span>{" "}
-            Favorites: {this.state.favorites}
-          </p>
+            Favorite
+          </button>
         </section>
       </>
     );

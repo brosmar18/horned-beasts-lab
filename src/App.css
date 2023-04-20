@@ -64,3 +64,9 @@ body {
 .horned-beast__favorites {
   margin: 0;
 }
+
+.horned-beast__instruction {
+  font-size: 14px;
+  font-style: italic;
+  margin: 0.5rem 0;
+}
