@@ -5,10 +5,16 @@ class HornedBeast extends React.Component {
     console.log(this.props);
     return (
       <>
-        <section>
-          <h2>Beast Name: {this.props.title}</h2>
-          <img src={this.props.image_url} alt={this.props.title} />
-          <figcaption>Description: {this.props.description}</figcaption>
+        <section className="horned-beast">
+          <h2 className="horned-beast__title">Beast Name: {this.props.title}</h2>
+          <img
+            src={this.props.image_url}
+            alt={this.props.title}
+            className="horned-beast__image"
+          />
+          <figcaption className="horned-beast__description">
+            Description: {this.props.description}
+          </figcaption>
         </section>
       </>
     );
