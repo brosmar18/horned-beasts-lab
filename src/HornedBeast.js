@@ -22,7 +22,7 @@ class HornedBeast extends React.Component {
             <figcaption className="horned-beast__description">Description: {this.props.description}</figcaption>
             <p>Click the button to favorite this beast:</p>
             <button onClick={this.incrementFavoriteCounter}>
-              ❤️ Favorite {this.state.favoriteCounter}
+              <span role="img" aria-label="heart symbol">❤️</span> Favorite {this.state.favoriteCounter}
             </button>
           </div>
         </div>
