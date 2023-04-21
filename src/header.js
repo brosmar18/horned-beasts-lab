@@ -36,7 +36,7 @@ class Header extends React.Component {
             <>
                 {/* Render the header with the defined style and add a click handler */}
                 <header className="header" style={headerStyle} onClick={this.handleClick}>
-                    <h1 className="header__title">Horned Beasts Lab</h1>
+                    <h1 className="header__title">Horned Beasts</h1>
                     {/* Show a message prompting the user to click for a color change */}
                     {showMessage && (
                         <p className="header__message">Click here to see a color change</p>
