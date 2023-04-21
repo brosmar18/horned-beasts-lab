@@ -1,40 +1,58 @@
+// App.js
 import './App.css';
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
+import SelectedBeast from './SelectedBeast'; // Import the SelectedBeast component
+import image_data from './data/data.json'; // Import data from a JSON file
 
-// Define App component and initialize state
+// Create the App component which is the main container for the application
 class App extends React.Component {
   constructor(props) {
     super(props);
-    // Set initial state of headerClicked to false
+    // Initialize the state with selectedBeast set to null and showModal set to false
     this.state = {
-      headerClicked: false,
+      selectedBeast: null,
+      showModal: false,
     };
   }
 
-  // Define function to handle click event on Header component
-  handleClickHeader = () => {
-    // Update state of headerClicked to the opposite of its current value
-    this.setState((prevState) => ({
-      headerClicked: !prevState.headerClicked,
-    }));
+  // Define the onOpenModal function to update the selectedBeast and showModal state values
+  onOpenModal = (beastTitle) => {
+    this.setState({
+      selectedBeast: beastTitle,
+      showModal: true,
+    });
   };
 
-  // Render App component with Header, Main, and Footer components, as well as the color-change message if the header was clicked
+  // Define the onCloseModal function to close the modal by setting showModal to false
+  onCloseModal = () => {
+    this.setState({
+      showModal: false,
+    });
+  };
+
+  // Render the App component, which includes the Header, Main, Footer, and SelectedBeast components
   render() {
-    const { headerClicked } = this.state;
+    // Find the selected beast object based on its title
+    const selectedBeast = image_data.find(beast => beast.title === this.state.selectedBeast);
+
     return (
       <div className="App">
-        <Header onClickHeader={this.handleClickHeader} /> {/* Pass handleClickHeader function as a prop to Header component */}
-        <Main />
+        <Header />
+        {/* Pass the onOpenModal function to the Main component as a prop */}
+        <Main onOpenModal={this.onOpenModal} />
         <Footer />
-        {headerClicked && <div className="color-change-message">Header color changed!</div>} {/* Display color-change message if headerClicked state is true */}
+        {/* Pass the selected beast object, onCloseModal function, and showModal state value to the SelectedBeast component */}
+        <SelectedBeast
+          beast={selectedBeast}
+          onClose={this.onCloseModal}
+          showModal={this.state.showModal}
+        />
       </div>
     );
   }
 }
 
-// Export App component for use in other files
 export default App;
