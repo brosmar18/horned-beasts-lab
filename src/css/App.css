@@ -25,19 +25,15 @@ body {
   text-shadow: 1px 1px #2a2022;
 }
 
-.footer {
-  background-color: #6c4d32;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+.form__group {
+  width: 20%;
+  margin: 0 auto;
 }
 
-.footer__copyright {
-  color: #e2d197;
-  margin: 0;
-  font-size: 0.9rem;
-  text-shadow: 1px 1px #2a2022;
+.form__label {
+  color: white;
 }
+
 
 .horned-beast {
   background-color: #849479;
@@ -86,5 +82,19 @@ body {
   font-style: italic;
   margin: 0.5rem 0;
   color: #e2d197;
+  text-shadow: 1px 1px #2a2022;
+}
+
+.footer {
+  background-color: #6c4d32;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer__copyright {
+  color: #e2d197;
+  margin: 0;
+  font-size: 0.9rem;
   text-shadow: 1px 1px #2a2022;
 }

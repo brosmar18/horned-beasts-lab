@@ -1,12 +1,11 @@
 import React from 'react';
 import './css/App.css';
-import { Container } from 'react-bootstrap';
+import { Container, Form } from 'react-bootstrap';
 import Header from './Header';
 import Main from './main';
 import Footer from './Footer';
 import SelectedBeast from './SelectedBeast';
 import image_data from './data/data.json';
-import { Form } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -42,16 +41,18 @@ class App extends React.Component {
     return (
       <Container>
         <Header />
-        <Form.Group controlId="formHornCount">
-          <Form.Label>Filter by Horn Count:</Form.Label>
-          <Form.Control as="select" onChange={this.handleHornCountChange}>
-            <option value={0}>All</option>
-            <option value={1}>One</option>
-            <option value={2}>Two</option>
-            <option value={3}>Three</option>
-            <option value={100}>One Hundred</option>
-          </Form.Control>
-        </Form.Group>
+        <Form>
+          <Form.Group controlId="formHornCount" className='form__group'>
+            <Form.Label className='form__label'>Filter by Horn Count:</Form.Label>
+            <Form.Control as="select" onChange={this.handleHornCountChange}>
+              <option value={0}>All</option>
+              <option value={1}>One</option>
+              <option value={2}>Two</option>
+              <option value={3}>Three</option>
+              <option value={100}>One Hundred</option>
+            </Form.Control>
+          </Form.Group>
+        </Form>
         <Main onOpenModal={this.onOpenModal} selectedHornCount={this.state.selectedHornCount} />
         <Footer />
         <SelectedBeast
